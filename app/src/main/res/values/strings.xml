@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="Login">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="tvCorreo">Correo</string>
+    <string name="tvPass">Contraseña</string>
+    <string name="Logout">Log out</string>
+    <string name="loader_text">Loading</string>
+    <string name="tvAcede">Accede a tu Cuenta</string>
+</resources>
