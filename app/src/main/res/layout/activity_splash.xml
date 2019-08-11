@@ -5,8 +5,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/lightseagreen"
+        android:background="@color/greenca"
+
         tools:context=".SplashActivity">
+
+    <!--Your comment android:background="@color/lightseagreen"-->
 
     <ImageView android:layout_width="wrap_content"
                android:layout_height="wrap_content"

@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var datosRecibidos = intent.extras
-        emailM = datosRecibidos!!.getString("correo").toString()
-        passM =  datosRecibidos!!.getString("pass").toString()
+        emailM = datosRecibidos?.getString("correo").toString()
+        passM =  datosRecibidos?.getString("pass").toString()
 
         tvCorreoM.text = emailM
         tvContraseñaM.text = passM
