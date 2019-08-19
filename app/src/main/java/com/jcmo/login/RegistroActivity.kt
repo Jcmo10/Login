@@ -15,9 +15,9 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        var email : String
-        var pass : String
-        var conpass : String
+        var email : String? = null
+        var pass : String? = null
+        var conpass : String? = null
 
         val etcorreo = findViewById<EditText>(R.id.etCorreo)
         val etpass = findViewById<EditText>(R.id.etPass)
@@ -36,7 +36,7 @@ class RegistroActivity : AppCompatActivity() {
             conpass = etconpass.text.toString()
 
 
-            if(email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches() ){
+            if(email!!.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches() ){
                 etcorreo.error = "Ingrese un Email Valido"
 
             }else{
@@ -44,14 +44,14 @@ class RegistroActivity : AppCompatActivity() {
                 valid = true
             }
 
-            if(pass.isEmpty() || pass.length < 6 || pass.length > 10 ){
+            if(pass!!.isEmpty() || pass!!.length < 6 || pass!!.length > 10 ){
                 etpass.error = "Entre 6 y 10 Carateres"
 
             }else{
                 etpass.error = null
                 valid2 = true
             }
-            if(conpass.isEmpty() || conpass.length < 6 || conpass.length > 10 ){
+            if(conpass!!.isEmpty() || conpass!!.length < 6 || conpass!!.length > 10 ){
                 etconpass.error = "Entre 6 y 10 Carateres"
 
             }else{

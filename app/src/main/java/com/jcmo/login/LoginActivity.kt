@@ -14,8 +14,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-     var email : String = ""
-     var pass : String  = ""
+     var email : String? = null
+     var pass : String?  = null
 
 
 
