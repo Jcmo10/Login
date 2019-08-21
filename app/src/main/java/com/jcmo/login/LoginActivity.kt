@@ -16,6 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
      var email : String? = null
      var pass : String?  = null
+    private var esVisible: Boolean? = null
 
 
 
@@ -28,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
         val etcorreo = findViewById<EditText>(R.id.etEmaill)
         val etpass = findViewById<EditText>(R.id.etPassl)
+//        val etpass2 = findViewById<EditText>(R.id.etPassl2)
 
 
         email = intent.extras?.getString("correo").toString()
@@ -37,28 +39,31 @@ class LoginActivity : AppCompatActivity() {
 
              //login()
             var valid : Boolean = false
+            var valid2 : Boolean = false
 
             var emaill = etcorreo.text.toString()
             var passl = etpass.text.toString()
 
             if(emaill.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(emaill).matches() ){
-                etcorreo.error = "Ingrese un Email Valido"
+                etEmaill2.error = "Ingrese un Email Valido"
 
             }else{
-                etcorreo.error = null
+                etEmaill2.error = null
                 valid = true
             }
 
             if(passl.isEmpty() || passl.length < 6 || passl.length > 10 ){
-                etpass.error = "Entre 6 y 10 Carateres"
+                etPassl2.error = "Entre 6 y 10 Carateres"
 
             }else{
-                etpass.error = null
-                valid = true
+
+                etPassl2.error = null
+                valid2 = true
             }
-            if(valid){
+            if(valid && valid2){
                 if(emaill != email || passl != pass ) {
                     Toast.makeText(this, "Correo o Contraseña no coinciden", Toast.LENGTH_SHORT).show()
+                    //etPassl2.error = null
                 }else{
                     intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("correo", email)
@@ -70,23 +75,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-            /*if(emaill == "" || passl == ""){
-                Toast.makeText(this,"Campos Vacios",Toast.LENGTH_SHORT).show()
-            }else if(emaill != email || passl != pass ){
-                Toast.makeText(this,"Correo o Contraseña no coinciden",Toast.LENGTH_SHORT).show()
-            }else{
-                if( email == null &&  pass == null) {
-                    Toast.makeText(this,"Correo o Contraseña no coinciden222",Toast.LENGTH_SHORT).show()
-                }else{
-                    intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("correo", email)
-                    intent.putExtra("pass", pass)
-                    startActivity(intent)
-                    finish()
-                }
 
-
-            }*/
 
         }
 

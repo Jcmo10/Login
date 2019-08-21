@@ -37,32 +37,34 @@ class RegistroActivity : AppCompatActivity() {
 
 
             if(email!!.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches() ){
-                etcorreo.error = "Ingrese un Email Valido"
+                etEmaill2.error = "Ingrese un Email Valido"
 
             }else{
-                etcorreo.error = null
+                etEmaill2.error = null
                 valid = true
             }
 
             if(pass!!.isEmpty() || pass!!.length < 6 || pass!!.length > 10 ){
-                etpass.error = "Entre 6 y 10 Carateres"
+                etPassl.error = "Entre 6 y 10 Carateres"
 
             }else{
-                etpass.error = null
+                etPassl.error = null
                 valid2 = true
             }
             if(conpass!!.isEmpty() || conpass!!.length < 6 || conpass!!.length > 10 ){
-                etconpass.error = "Entre 6 y 10 Carateres"
+                etcCnfirPass1.error = "Entre 6 y 10 Carateres"
 
             }else{
-                etpass.error = null
+                etcCnfirPass1.error = null
                 valid3 = true
             }
 
 
             if(valid && valid2 && valid3){
                 if(  pass != conpass ) {
-                    Toast.makeText(this, "Contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                    etcCnfirPass1.error = "Contraseñas no Coinciden"
+                    etPassl.error = "Contraseñas no Coinciden"
                 }else{
                     intent.putExtra("username",email )
                     intent.putExtra("password",pass)
@@ -71,16 +73,7 @@ class RegistroActivity : AppCompatActivity() {
                 }
             }
 
-            /*if(email.isEmpty() || pass.isEmpty() || conpass.isEmpty()){
-                Toast.makeText(this,"Campos Vacios",Toast.LENGTH_SHORT).show()
-            }else if(pass != conpass){
-                Toast.makeText(this,"Constraseñas Diferentes",Toast.LENGTH_SHORT).show()
-            }else{
-                intent.putExtra("username",email )
-                intent.putExtra("password",pass)
-                setResult(Activity.RESULT_OK, intent)//llama actividad
-                finish()//destruyr actividad
-            }*/
+
         }
 
     }

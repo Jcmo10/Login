@@ -9,17 +9,6 @@ import kotlin.concurrent.timerTask
 
 class SplashActivity : AppCompatActivity() {
 
-  /* private var mDelayHandler: Handler? = null
-    private val SPLASH_DELAY: Long = 2000 //2 seconds
-
-    internal val mRunnable: Runnable = Runnable {
-        if (!isFinishing) {
-
-            val intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -32,10 +21,7 @@ class SplashActivity : AppCompatActivity() {
         },2000
         )
 
-        /*mDelayHandler = Handler()
 
-        //Navigate with delay
-        mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)*/
     }
 
     private fun gotoMainActivity(){
@@ -44,13 +30,6 @@ class SplashActivity : AppCompatActivity() {
         finish()
     }
 
-   /* public override fun onDestroy() {
 
-        if (mDelayHandler != null) {
-            mDelayHandler!!.removeCallbacks(mRunnable)
-        }
-
-        super.onDestroy()
-    }*/
 
 }

@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         passM =  datosRecibidos?.getString("pass").toString()
 
         tvCorreoM.text = emailM
-        tvContraseñaM.text = passM
+        //tvContraseñaM.text = passM
 
     }
 
